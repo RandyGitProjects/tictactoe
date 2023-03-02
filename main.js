@@ -24,10 +24,8 @@ var currentEmoji = document.querySelector("#current-emoji")
 // Event Listeners
 gridBoard.addEventListener('click', function(event) {
     if (event.target.matches('.grid-item')) {
-      switchPlayer()
-      event.target.textContent = currentPlayer
         // Show clicked grid item
-          console.log(`Clicked grid item with id ${event.target.id}`);
+          // console.log(`Clicked grid item with id ${event.target.id}`);
     }
   });
 
@@ -38,16 +36,3 @@ gridBoard.addEventListener('click', function(event) {
   function changeEmojiValue() {
     currentEmoji.innerText = chosenEmoji.value;
   };
-
-
-
-// function chosenBox(event) {
-//     if(event.target.idName === "grid-one") {
-//         var gridEmoji = event.target.parentNode
-//         gridEmoji = emojiDisplay.appendChild(document.createElement("p"));
-//         gridEmoji.classList.add('chosen-emoji');
-//         gridEmoji.innerHTML = chosenEmoji.value
-
-
-
-// }
