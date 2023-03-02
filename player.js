@@ -1,9 +1,12 @@
 class player {
-    constructor(playerOne, playerTwo, token) {
-        this.id = token;
-        this.playerOne = playerOne
-        this.playerTwo = playerTwo
+    constructor(player) {
+        this.id = Date.now();
+        this.token = player.token
+        this.playOne = player.one
+        this.playTwo = player.two
         this.wins = 0
-        this.increaseWins = 0
+    }
+    thisIcreasedWins() {
+        
     }
 }
