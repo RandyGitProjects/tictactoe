@@ -1,48 +1,38 @@
 // Global Variables
 var playerOneWins = []
 var playerTwoWins = []
-var playerStart = "P1"
+var playerOne = "X"
+var playerTwo = "O"
 
 //Query Selectors
-playerOne = document.querySelector(".left-bar")
-playerTwo = document.querySelector(".right-bar")
-var boxOne = document.querySelector(".grid-one")
-var boxTwo = document.querySelector(".grid-two")
-var boxThree = document.querySelector(".grid-three")
-var boxFour = document.querySelector(".grid-four")
-var boxFive = document.querySelector(".grid-five")
-var boxSix = document.querySelector(".grid-six")
-var boxSeven = document.querySelector(".grid-seven")
-var boxEight = document.querySelector(".grid-eight")
-var boxNine = document.querySelector(".grid-nine")
-var emojiDisplay = document.querySelector(".emoji")
+// var playerOne = document.querySelector(".left-bar")
+// var playerTwo = document.querySelector(".right-bar")
+// var boxOne = document.querySelector("#grid-one")
+// var boxTwo = document.querySelector(".grid-two")
+// var boxThree = document.querySelector(".grid-three")
+// var boxFour = document.querySelector(".grid-four")
+// var boxFive = document.querySelector(".grid-five")
+// var boxSix = document.querySelector(".grid-six")
+// var boxSeven = document.querySelector(".grid-seven")
+// var boxEight = document.querySelector(".grid-eight")
+// var boxNine = document.querySelector(".grid-nine")
+var emojiDisplay = document.querySelector(".grid-item")
 var chosenEmoji = document.querySelector('select')
+var gridBoard = document.querySelector(".game-board")
+var currentEmoji = document.querySelector("#current-emoji")
 
 // Event Listeners
-boxOne.addEventListener("click", chosenBox)
-// boxTwo.addEventListener("click", chosenBox)
+gridBoard.addEventListener('click', function(event) {
+    if (event.target.matches('.grid-item')) {
+        // Show clicked grid item
+          // console.log(`Clicked grid item with id ${event.target.id}`);
+    }
+  });
 
-//Functions
-function showEmoji() {
-    emojiDisplay.innerHTML += `<p class="chosen-emoji>"${chosenEmoji.value}</p>`
-}
+  function emoji() {
+    emojiDisplay.innerHTML = chosenEmoji.value
+  }
 
-function chosenBox(event) {
-    if(event.target.className === "grid-one")
-    var gridEmoji = event.target.parentNode
-    gridEmoji = emojiDisplay.innerHTML += `<p class="chosen-emoji>"${chosenEmoji.value}</p>`
-    alert('WOOOO grid One')
-    // for (var i = 0; i < box.length; i++) {
-    //     box[i].addEventListener("click", function() {
-    //     })
-    // }
-}
-
-// function switchPlayer(currentPlayer) {
-//     if (currentPlayer === "P1") {
-//         playerStart = "P2"
-//     } else {
-//         playerStart = "P1"
-//     }
-
-// }
+  function changeEmojiValue() {
+    currentEmoji.innerText = chosenEmoji.value;
+  };

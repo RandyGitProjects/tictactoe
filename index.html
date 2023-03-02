@@ -8,17 +8,12 @@
   <body>
     <section class="left-section">
       <div class="left-bar">
-        <select name="color picker" id="color-picker">
-          <option value="red">❤️ RED</option>
-          <option value="blue">💙 BLUE</option>
-          <option value="yellow">💛 YELLOW</option>
-          <option value="green">💚 GREEN</option>
-          <option value="black">🖤 BLACK</option>
-          <option value="purple">💜 PURPLE</option>
-          <option value="orange">🧡 ORANGE</option>
-          <option value="white">🤍 WHITE</option>
+        <select name="emoji" id="emoji-picker">
+          <option value="angel-face">😇 Angel Smile</option>
+          <option value="celebrate-face">🥳 Celebrate</option>
+          <option value="shocked-face">😳 Shocked</option>
         </select>
-        <section class="emoji"></section>
+        <p class="player-wins">Wins<span id="current-emoji"></span></p>
       </div>
     </section>
     <section class="middle-section">
@@ -26,20 +21,25 @@
         <h1>0 Wins Center</h1>
       </div>
     <section class="game-board">
-      <div id="gridItem" class="grid-one"></div>
-      <div id="gridItem" class="grid-two"></div>
-      <div id="gridItem" class="grid-three"></div>
-      <div id="gridItem" class="grid-four"></div>
-      <div id="gridItem" class="grid-five"></div>
-      <div id="gridItem" class="grid-six"></div>
-      <div id="gridItem" class="grid-seven"></div>
-      <div id="gridItem" class="grid-eight"></div>
-      <div id="gridItem" class="grid-nine"></div>
+      <div id="grid-one" class="grid-item"></div>
+      <div id="grid-two" class="grid-item"></div>
+      <div id="grid-three" class="grid-item"></div>
+      <div id="grid-four" class="grid-item"></div>
+      <div id="grid-five" class="grid-item"></div>
+      <div id="grid-six" class="grid-item"></div>
+      <div id="grid-seven" class="grid-item"></div>
+      <div id="grid-eight" class="grid-item"></div>
+      <div id="grid-nine" class="grid-item"></div>
     </section>  
     </section>
     <section class="right-section">
       <div class="right-bar">
-        <h1>0 Wins Right</h1>
+        <select name="emoji" id="emoji-picker">
+          <option value="angel-face">😇 Angel Smile</option>
+          <option value="celebrate-face">🥳 Celebrate</option>
+          <option value="shocked-face">😳 Shocked</option>
+        </select>
+        <p class="player-wins">Wins<span id="current-emoji"></span></p>
       </div>
     </section>
    <script src="./player.js"></script>

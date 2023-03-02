@@ -32,20 +32,40 @@ body {
     width: 30vw;
 }
 
-.grid-one,
-.grid-two,
-.grid-three,
-.grid-four,
-.grid-five,
-.grid-six {
+#grid-one,
+#grid-two,
+#grid-three,
+#grid-four,
+#grid-five,
+#grid-six {
     border-bottom: 6px solid black;
 }
 
-.grid-one,
-.grid-four,
-.grid-seven,
-.grid-two,
-.grid-five,
-.grid-eight{
+#grid-one,
+#grid-four,
+#grid-seven,
+#grid-two,
+#grid-five,
+#grid-eight{
     border-right: 6px solid black;
 }
+
+select{
+    margin-top: 30px;
+    height: 3vh;
+    width: 9vw;
+}
+
+.player-wins{
+    font-size: 30px;
+    margin-left: 30px;
+}
+
+.chosen-emoji::before{
+    font-size: 10px;
+    position: absolute;
+}
+
+.element::before {
+    content: "🔥";
+  }
