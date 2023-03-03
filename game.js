@@ -1,10 +1,11 @@
 class Game {
     constructor() {
-       this.playerOne = new Player("x", );
-       this.playerTwo = new Player("o", );
-       this.currentPlayer = this.playerOne;
+       this.playerOne = new Player(1, '🥳');
+       this.playerTwo = new Player(2, '🥹');
+       this.currentPlayer = this.playerOne ;
        this.winner = false;
        this.draw = false;
+       this.data = []
        this.winningConditions = [
         [1,2,3],
         [4,5,6],
@@ -17,15 +18,13 @@ class Game {
     ]
 
     }
-    gameData() {
-
-    }
-
     switchPlayer() {
       if (this.currentPlayer === this.playerOne) {
           this.currentPlayer = this.playerTwo;
+          console.log("Current Player is 2!")
         } else {
           this.currentPlayer = this.playerOne;
+          console.log('Current Player is 1!')
         }
       }
       
