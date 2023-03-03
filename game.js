@@ -22,13 +22,13 @@ class Game {
     }
 
     switchPlayer() {
-    if (this.currentPlayer === this.player1) {
-        this.currentPlayer = this.player2;
-      } else {
-        this.currentPlayer = this.player1;
+      if (this.currentPlayer === this.playerOne) {
+          this.currentPlayer = this.playerTwo;
+        } else {
+          this.currentPlayer = this.playerOne;
+        }
       }
-    }
-
+      
     drawConditions() {
 
     }
