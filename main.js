@@ -1,9 +1,7 @@
 // Global Variables
 var playerOneWins = []
 var playerTwoWins = []
-var playerOne = 'x'
-var playerTwo = 'o'
-new Game()
+var game = new Game()
 
 //Query Selectors
 var gridArray = document.querySelectorAll(".grid-item")
@@ -14,13 +12,20 @@ gridBoard.addEventListener('click', function(event) {
     if (event.target.matches('.grid-item')) {
       turnGridArray()
       tokenText()
-      // newEventText()
+      checkGridItem()
       console.log(`Clicked grid item with id ${event.target.id}`);
     }
   });
+
+  function checkGridItem() {
+    if (event.target.id) {
+      game.switchPlayer()     
+    }
+  }
+
   
   function tokenText() {
-  event.target.innerText = playerOne
+  event.target.innerText = game.playerOne.token
 }
 
 function turnGridArray() {
