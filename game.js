@@ -5,7 +5,8 @@ class Game {
        this.currentPlayer = this.playerOne ;
        this.winner = false;
        this.draw = false;
-       this.data = []
+       this.dataP1 = []
+       this.dataP2 = []
        this.winningConditions = [
         [1,2,3],
         [4,5,6],
