@@ -25,28 +25,28 @@ body {
   }
 
 .game-board{
-    margin-top: 200px;
+    margin-top: 100px;
     display: inline-grid;
     grid-template-columns: auto auto auto;
     height: 50vh;
     width: 30vw;
 }
 
-#grid-one,
-#grid-two,
-#grid-three,
-#grid-four,
-#grid-five,
-#grid-six {
+.grid-item:nth-child(1),
+.grid-item:nth-child(2),
+.grid-item:nth-child(3),
+.grid-item:nth-child(4),
+.grid-item:nth-child(5),
+.grid-item:nth-child(6){
     border-bottom: 6px solid black;
 }
 
-#grid-one,
-#grid-four,
-#grid-seven,
-#grid-two,
-#grid-five,
-#grid-eight{
+.grid-item:nth-child(1),
+.grid-item:nth-child(2),
+.grid-item:nth-child(4),
+.grid-item:nth-child(5),
+.grid-item:nth-child(7),
+.grid-item:nth-child(8){
     border-right: 6px solid black;
 }
 
