@@ -1,12 +1,13 @@
 class Game {
     constructor() {
-       this.playerOne = new Player(1, '🥳');
-       this.playerTwo = new Player(2, '🥹');
+       this.playerOne = new Player(1, 'X');
+       this.playerTwo = new Player(2, 'O');
        this.currentPlayer = this.playerOne ;
        this.winner = false;
        this.draw = false;
        this.dataP1 = []
        this.dataP2 = []
+       this.one = new Array(9)
        this.winningConditions = [
         [0,1,2],
         [3,4,5],
