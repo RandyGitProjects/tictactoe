@@ -6,8 +6,6 @@ var game = new Game()
 //Query Selectors
 var gridArray = document.querySelectorAll(".grid-item")
 var gridBoard = document.querySelector(".game-board")
-var gridZero = document.querySelector("#grid-zero")
-var gridOne = document.querySelector("#grid-one")
 
 // Event Listeners
 gridBoard.addEventListener('click', function(event) {
@@ -24,19 +22,16 @@ gridBoard.addEventListener('click', function(event) {
   // After the if statement is finished we switch players using the game.switchPlayer function
   function tokenSwitch() {
     if (game.currentPlayer === game.playerOne) {
-      // game.one[event.target.id] = game.currentPlayer.id;
       event.target.innerText = game.playerOne.token
-      event.target.style.pointerEvents = 'none'
-      game.dataP1.push(game.playerOne.id)
+      // event.target.style.pointerEvents = 'none'
+      // game.dataP1.push(game.playerOne.id)
     }else{
-      // game.one[event.target.id] = game.currentPlayer.id;
       event.target.innerText = game.playerTwo.token
-      event.target.style.pointerEvents = 'none'
-      game.dataP2.push(game.playerTwo.id)
-      // console.log(game.one(indexOf(1)))
-
+      // event.target.style.pointerEvents = 'none'
+      // game.dataP2.push(game.playerTwo.id)
     }
     game.switchPlayer()
+    stopEvent()
   }
   
   function turnGridArray() {
@@ -52,12 +47,22 @@ gridBoard.addEventListener('click', function(event) {
         game.one[secondIndex] === game.currentPlayer.id &&
         game.one[thirdIndex] === game.currentPlayer.id) {
           console.log(`${game.currentPlayer.token} wins!`);
+          game.currentPlayer.thisIncreasedWins()
+          game.winner = true 
+        }
+    }
+  }
+
+  function stopEvent() {
+    if (game.winner) {
+      for (var i = 0; i < gridArray.length; i++) {
+        gridArray[i].style.pointerEvents = "none";
+      }
+    } else {
+      for (var i = 0; i < game.one.length; i++) {
+        if (game.one[i] === '' ) {
+          event.target.style.pointerEvents = 'none';
+        }
       }
     }
   }
-      // if (gridZero.innerText && gridOne.innerText === game.playerOne.token) {
-  //   console.log("Weee")
-  //   game.winner = true
-  //   game.playerOne.thisIcreasedWins()
-  // }
-
