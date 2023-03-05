@@ -16,8 +16,23 @@ class Game {
         [1,4,7],
         [2,5,8]
     ]
-
     }
+
+    checkWinConditions() {
+      for (var i = 0; i < game.winningConditions.length; i++) {
+        game.one[event.target.id] = game.currentPlayer.id;
+        var firstIndex = game.winningConditions[i][0];
+        var secondIndex = game.winningConditions[i][1];
+        var thirdIndex = game.winningConditions[i][2];
+        if (game.one[firstIndex] === game.currentPlayer.id &&
+            game.one[secondIndex] === game.currentPlayer.id &&
+            game.one[thirdIndex] === game.currentPlayer.id) {
+              game.currentPlayer.thisIncreasedWins()
+              game.winner = true 
+            }
+        }
+      }
+
     switchPlayer() {
       if (this.currentPlayer === this.playerOne) {
           this.currentPlayer = this.playerTwo;
@@ -28,8 +43,12 @@ class Game {
         }
       }
       
-    drawConditions() {
-
+    checkDraw() {
+      if (amountOfTurns === gridArray.length && !game.winner) {
+        draw.innerText = "Game is a draw!"
+        return true
+      }
+      return false
     }
     
     resetGame() {
