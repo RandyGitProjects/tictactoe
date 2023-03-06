@@ -27,9 +27,15 @@ body {
 .game-board{
     margin-top: 100px;
     display: inline-grid;
-    grid-template-columns: auto auto auto;
-    height: 50vh;
-    width: 30vw;
+    grid-template-columns: 75px 75px 75px;
+    grid-template-rows: 75px 75px 75px;
+}
+
+.grid-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
 }
 
 .grid-item:nth-child(1),
@@ -39,6 +45,7 @@ body {
 .grid-item:nth-child(5),
 .grid-item:nth-child(6){
     border-bottom: 6px solid black;
+    align-content: center;
 }
 
 .grid-item:nth-child(1),
@@ -60,12 +67,3 @@ select{
     font-size: 30px;
     margin-left: 30px;
 }
-
-.chosen-emoji::before{
-    font-size: 10px;
-    position: absolute;
-}
-
-.element::before {
-    content: "🔥";
-  }
