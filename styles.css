@@ -5,9 +5,10 @@ body {
 }
 
 .middle-section {
-    border: 1px solid red;
+    background-image: linear-gradient(to bottom, rgb(253, 252, 252), rgb(69, 69, 69));
     height: 100vh;
     width: 50vw;
+    padding-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,10 +19,12 @@ body {
     background-image: linear-gradient(to bottom, rgb(0, 255, 64), rgb(0, 0, 0));
     height: 100vh;
     width: 25vw;
+    padding-top: 30px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
+    font-size: 25px;
   }
 
 .game-board{
@@ -57,13 +60,8 @@ body {
     border-right: 6px solid black;
 }
 
-select{
-    margin-top: 30px;
-    height: 3vh;
-    width: 9vw;
-}
-
-.player-wins{
+.player-one-wins,
+.player-two-wins{
     font-size: 30px;
-    margin-left: 30px;
+    margin-left: 40px;
 }
