@@ -34,21 +34,20 @@ class Game {
       }
 
     switchPlayer() {
+      if(!game.winner) {
       if (this.currentPlayer === this.playerOne) {
           this.currentPlayer = this.playerTwo;
-          console.log("Current Player is 2!")
         } else {
           this.currentPlayer = this.playerOne;
-          console.log('Current Player is 1!')
         }
       }
+    }
       
     checkDraw() {
       if (amountOfTurns === gridArray.length && !game.winner) {
         draw.innerText = "Game is a draw!"
-        return true
+        game.draw = true
       }
-      return false
     }
     
     resetGame() {
