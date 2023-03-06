@@ -2,13 +2,16 @@ body {
     margin: 0;
     display: flex;
     align-items: flex-start;
+    background-image: url("assets/stars.webp");
+    background-size: 100vw;
+    height: 100vh;
 }
 
 .middle-section {
-    background-image: linear-gradient(to bottom, rgb(253, 252, 252), rgb(69, 69, 69));
     height: 100vh;
     width: 50vw;
     padding-top: 15px;
+    color: #eedb00;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,15 +19,31 @@ body {
 
 .left-section,
 .right-section{
-    background-image: linear-gradient(to bottom, rgb(0, 255, 64), rgb(0, 0, 0));
     height: 100vh;
     width: 25vw;
-    padding-top: 30px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     font-size: 25px;
+  }
+
+  .left-section{
+    color : #2FF924;
+    border-right: 6px solid #2FF924;
+    background-image: url("assets/68b1713c9265e6cae14401b7038670d3.jpg");
+    background-repeat: no-repeat;
+    background-size: 35vw 100vh;
+    background-position: center;
+  }
+
+  .right-section{
+    color: #EB212E;
+    border-left: 6px solid #EB212E;
+    background-image: url("assets/ae6a3ef749110ad2b0bdab2b8e391019.jpg");
+    background-repeat: no-repeat;
+    background-size: 35vw 100vh;
+    background-position: center;
   }
 
 .game-board{
@@ -47,8 +66,7 @@ body {
 .grid-item:nth-child(4),
 .grid-item:nth-child(5),
 .grid-item:nth-child(6){
-    border-bottom: 6px solid black;
-    align-content: center;
+    border-bottom: 6px solid white;
 }
 
 .grid-item:nth-child(1),
@@ -57,7 +75,7 @@ body {
 .grid-item:nth-child(5),
 .grid-item:nth-child(7),
 .grid-item:nth-child(8){
-    border-right: 6px solid black;
+    border-right: 6px solid white;
 }
 
 .player-one-wins,
