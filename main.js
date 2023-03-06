@@ -3,10 +3,9 @@ var game = new Game()
 var amountOfTurns = 0
 
 //Query Selectors
+var gridBoard = document.querySelector(".game-board")
 var gridArray = document.querySelectorAll(".grid-item")
 var gridClear = document.querySelectorAll(".grid-item")
-
-var gridBoard = document.querySelector(".game-board")
 var draw = document.querySelector("h1")
 var winner = document.querySelector("h1")
 var playerTurn = document.querySelector("h1")
@@ -19,18 +18,13 @@ var twoWins = document.querySelector(".player-two-wins")
 gridBoard.addEventListener('click', function(event) {
   if (event.target.matches('.grid-item')) {
     game.checkWinConditions()
-    Results()
     tokenSwitch()
     displayWins()
-    displayPlayersTurn()
+    resetAll()
     displayWinner()
-    console.log(`Clicked grid item with id ${event.target.id}`);
   }
 });
-// This function calls the game class currentPlayer and make sure it's player one.
-// after it rings true we update the DOM using innerText and using the player one token
-// If currentPlayer does not = player one we update the DOM using innerText using the player two token
-// After the if statement is finished we switch players using the game.switchPlayer function
+
 function tokenSwitch() {
   if (game.currentPlayer === game.playerOne) {
     event.target.innerText = game.playerOne.token
@@ -38,13 +32,14 @@ function tokenSwitch() {
     event.target.innerText = game.playerTwo.token
   }
   game.switchPlayer()
+  displayPlayersTurn()
   amountOfTurns += 1
   stopEvent()
   game.checkDraw()
 }
 
 function stopEvent() {
-  if (game.winner || amountOfTurns === gridArray.length) {
+  if (game.winner || game.draw) {
     for (var i = 0; i < gridArray.length; i++) {
       gridBoard.removeEventListener('click', tokenSwitch);
       gridArray[i].style.pointerEvents = "none";
@@ -60,7 +55,11 @@ function stopEvent() {
 
 function displayWinner() {
   if (game.winner === true) {
-    winner.innerText = `Congratulations player ${game.currentPlayer.token} wins!`
+    if (game.currentPlayer === game.playerOne) {
+      winner.innerText = `Congratulations player ${game.playerOne.token} wins!`
+    } else {
+      winner.innerText = `Congratulations player ${game.playerTwo.token} wins!`
+    }
   }
 }
 
@@ -77,24 +76,32 @@ function displayPlayersTurn() {
   }
 }
 
-function Results() {
-  if (game.winner || amountOfTurns === gridArray.length) {
+function resetAll() {
+  if (game.winner || game.draw) {
     setTimeout(function() {
+      playerTurn.innerText = `It's player ${game.currentPlayer.token}'s turn`
       game.winner = false;
       game.draw = false;
-      game.one = new Array(9).fill(null);
-      playerTurn.innerText = `It's player ${game.currentPlayer.token}'s turn`
+      amountOfTurns = 0
       resetGameBoard()
+      game.one = new Array(9).fill(null);
+      resetClick()
       console.log("it worked")
     }, 4000)
   }
 }
 
-// function resetGameBoard() {
-//   for (var i = 0; i < game.one; i++) {
-//     if (gridArray.innerText )
-//     gridClear.innerText = game.one[i]
-//   }
-// }
+function resetGameBoard() {
+  for (let i = 0; i < gridArray.length; i++) {
+   var gridSquare = document.getElementById(`${i}`);
+    gridSquare.innerText = "";
+  }
+}
+
+function resetClick() {
+  for (let i = 0; i < gridArray.length; i++) {
+    gridArray[i].style.pointerEvents = "auto";
+  }
+}
 
 
