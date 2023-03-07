@@ -41,7 +41,6 @@ gridBoard.addEventListener("click", function(event) {
     game.checkDraw();
   }
 
-
   function doNothing() {
   }
 
