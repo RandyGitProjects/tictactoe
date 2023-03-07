@@ -5,7 +5,7 @@ class Game {
        this.currentPlayer = this.playerOne ;
        this.winner = false;
        this.draw = false;
-       this.one = new Array(9).fill(null)
+       this.one = new Array(9).fill(null);
        this.winningConditions = [
         [0,1,2],
         [3,4,5],
@@ -14,7 +14,7 @@ class Game {
         [0,4,8],
         [0,3,6],
         [1,4,7],
-        [2,5,8]
+        [2,5,8],
     ]
     }
 
@@ -27,30 +27,29 @@ class Game {
         if (game.one[firstIndex] === game.currentPlayer.id &&
             game.one[secondIndex] === game.currentPlayer.id &&
             game.one[thirdIndex] === game.currentPlayer.id) {
-              game.currentPlayer.thisIncreasedWins()
-              game.winner = true 
+              game.currentPlayer.thisIncreasedWins();
+              game.winner = true;
+              displayWinner();
+              return true  
             }
         }
+        return false
       }
 
     switchPlayer() {
-      if(!game.winner) {
-      if (this.currentPlayer === this.playerOne) {
-          this.currentPlayer = this.playerTwo;
-        } else {
-          this.currentPlayer = this.playerOne;
+      if (!game.winner) {
+        if (this.currentPlayer === this.playerOne) {
+            this.currentPlayer = this.playerTwo;
+          } else {
+            this.currentPlayer = this.playerOne;
+          }
         }
       }
-    }
       
     checkDraw() {
       if (amountOfTurns === gridArray.length && !game.winner) {
         draw.innerText = "Game is a draw!"
         game.draw = true
+        }
       }
     }
-    
-    resetGame() {
-
-    }
-}
