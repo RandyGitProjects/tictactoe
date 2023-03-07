@@ -51,8 +51,8 @@ gridBoard.addEventListener("click", function(event) {
         gridArray[i].style.pointerEvents = "none";
       }
     } else {
-      for (var i = 0; i < game.one.length; i++) {
-        if (game.one[i] === null ) {
+      for (var i = 0; i < game.gridData.length; i++) {
+        if (game.gridData[i] === null ) {
           event.target.style.pointerEvents = "none";
         }
       }
@@ -79,7 +79,7 @@ gridBoard.addEventListener("click", function(event) {
         game.draw = false;
         amountOfTurns = 0;
         resetGameBoard();
-        game.one = new Array(9).fill(null);
+        game.gridData = new Array(9).fill(null);
         game.switchPlayer();
         resetClick();
         displayPlayersTurn();

@@ -5,7 +5,7 @@ class Game {
        this.currentPlayer = this.playerOne ;
        this.winner = false;
        this.draw = false;
-       this.one = new Array(9).fill(null);
+       this.gridData = new Array(9).fill(null);
        this.winningConditions = [
         [0,1,2],
         [3,4,5],
@@ -20,13 +20,13 @@ class Game {
 
     checkWinConditions() {
       for (var i = 0; i < game.winningConditions.length; i++) {
-        game.one[event.target.id] = game.currentPlayer.id;
+        game.gridData[event.target.id] = game.currentPlayer.id;
         var firstIndex = game.winningConditions[i][0];
         var secondIndex = game.winningConditions[i][1];
         var thirdIndex = game.winningConditions[i][2];
-        if (game.one[firstIndex] === game.currentPlayer.id &&
-            game.one[secondIndex] === game.currentPlayer.id &&
-            game.one[thirdIndex] === game.currentPlayer.id) {
+        if (game.gridData[firstIndex] === game.currentPlayer.id &&
+            game.gridData[secondIndex] === game.currentPlayer.id &&
+            game.gridData[thirdIndex] === game.currentPlayer.id) {
               game.currentPlayer.thisIncreasedWins();
               game.winner = true;
               displayWinner();
